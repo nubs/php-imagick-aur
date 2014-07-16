@@ -3,7 +3,7 @@
 pkgname=php-imagick
 _extname=imagick
 pkgver=3.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="PHP extension for IMagick"
 arch=('i686' 'x86_64')
 url="http://pecl.php.net/package/$_extname"
@@ -21,6 +21,6 @@ build() {
   ./configure --prefix=/usr
   make || return 1
   make INSTALL_ROOT="$pkgdir" install
-  echo ";extension=$_extname.so" > $_extname.ini
+  echo "extension=$_extname.so" > $_extname.ini
   install -D -m644 $_extname.ini "$pkgdir/etc/php/conf.d/$_extname.ini"
 }
