@@ -4,6 +4,7 @@ An [AUR] package build for PHP's [imagick] extension.
 ## Building
 You can of course build this package using [makepkg], but the recommended way
 of building this package is using [Docker].  This can be done like so:
+
 ```bash
 docker build --tag php-imagick-aur .
 docker run --rm --volume "$(pwd):/package" php-imagick-aur
