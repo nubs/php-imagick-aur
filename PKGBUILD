@@ -20,6 +20,11 @@ build() {
   phpize
   ./configure --prefix=/usr
   make
+}
+
+package() {
+  cd "${_extname}-${pkgver}"
+
   make INSTALL_ROOT="${pkgdir}" install
   echo "extension=${_extname}.so" > "${_extname}.ini"
   install -D -m644 "${_extname}.ini" "${pkgdir}/etc/php/conf.d/${_extname}.ini"
