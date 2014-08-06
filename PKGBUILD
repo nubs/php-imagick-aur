@@ -17,9 +17,9 @@ md5sums=('f2fd71b026debe056e0ec8d76c2ffe94')
 build() {
   cd "${_extname}-${pkgver}"
 
-  phpize || return 1
+  phpize
   ./configure --prefix=/usr
-  make || return 1
+  make
   make INSTALL_ROOT="${pkgdir}" install
   echo "extension=${_extname}.so" > "${_extname}.ini"
   install -D -m644 "${_extname}.ini" "${pkgdir}/etc/php/conf.d/${_extname}.ini"
