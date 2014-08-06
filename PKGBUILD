@@ -15,7 +15,7 @@ source=("http://pecl.php.net/get/${_extname}-${pkgver}.tgz")
 md5sums=('f2fd71b026debe056e0ec8d76c2ffe94')
 
 build() {
-  cd "${srcdir}/${_extname}-${pkgver}"
+  cd "${_extname}-${pkgver}"
 
   phpize || return 1
   ./configure --prefix=/usr
